@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Article: Identifiable, Decodable {
+struct Article: Identifiable, Decodable, Hashable {
     let id = UUID()
     let title: String
     let author: String?
