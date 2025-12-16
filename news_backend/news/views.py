@@ -1,10 +1,14 @@
-from django.http import JSONResponse
+from django.http import JsonResponse
 from .services import fetch_top_stories, fetch_latest_stories
 
 def top_stories(request):
-    data = fetch_top_stories()
-    return JSONResponse({"results": data}, safe = False)
+    return JsonResponse(
+        {"results": fetch_top_stories()},
+        safe=False
+    )
 
 def latest_stories(request):
-    data = fetch_latest_stories()
-    return JSONResponse({"results": data}, safe = False)
+    return JsonResponse(
+        {"results": fetch_latest_stories()},
+        safe=False
+    )
